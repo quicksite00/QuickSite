@@ -1,0 +1,643 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d1a;
+    color: white;
+}
+
+/* Hero Section with Fixed Background */
+header {
+    position: relative;
+    height: 100vh;
+    background: url('./assets/Header Background.png') no-repeat center center/cover;
+    background-attachment: fixed;
+    /* <-- Key for parallax effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+
+/* Content on top */
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Glowing title */
+header h1.glow {
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 10px #FF00CC, 0 0 20px #8000FF;
+    animation: fadeInDown 2s ease;
+}
+
+/* Floating tagline */
+header p.tagline {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeInUp 2s ease;
+    /* animation: float 3s ease-in-out infinite; */
+}
+
+/* CTA button */
+header .cta {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #8000FF, #FF00CC);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    /* animation: float 3s ease-in-out infinite; */
+}
+
+header .cta:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #FF00CC;
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+section {
+    padding: 80px 10%;
+    background: #0d0d1a;
+    /* dark background to cover header */
+    color: white;
+}
+
+section:nth-child(even) {
+    background: #1a1a2e;
+    /* alternate shades for contrast */
+}
+
+.intro,
+.moto,
+.features,
+.team {
+    text-align: center;
+}
+
+.intro {
+    padding: 100px 10%;
+    text-align: left;
+}
+
+.intro-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.intro-text {
+    flex: 1 1 50%;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 8px #FF00CC;
+    animation: fadeInLeft 1.5s ease;
+
+}
+
+.intro-title span {
+    color: #ffcc00;
+}
+
+.intro-tagline {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+    animation: fadeInUp 2s ease;
+}
+
+.intro-detail {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    opacity: 0.9;
+    animation: fadeInUp 2.5s ease;
+}
+
+.intro-cta {
+    background: linear-gradient(90deg, #FF00CC, #8000FF);
+    padding: 12px 28px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    animation: fadeInUp 3s ease;
+}
+
+.intro-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #8000FF;
+}
+
+.intro-image {
+    flex: 1 1 40%;
+    text-align: center;
+    animation: fadeInRight 1.8s ease;
+}
+
+.intro-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.6);
+    transition: all 0.4s ease-in-out;
+}
+
+.intro-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #FF00CC;
+    transition: all 0.4s ease-in-out;
+}
+
+
+
+/* Team Section */
+.team {
+    padding: 100px 10%;
+    text-align: center;
+    background: #0d0d1a;
+}
+
+.section-title {
+    font-size: 3.0rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 0 8px #FF00CC;
+}
+
+.section-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+
+.team-card {
+    width: 260px;
+    height: 360px;
+    perspective: 1000px;
+
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.team-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(128, 0, 255, 0.6);
+    padding: 25px;
+
+}
+
+.card-front {
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-front h3 {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 15px 15px 5px;
+    font-size: 1.6rem;
+}
+
+.role {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.card-front .team-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    object-fit: cover;
+    object-view-box: inset(10% 0 30% 0);
+    border: 3px solid #FF00CC;
+    box-shadow: 0 0 12px #8000FF;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #8000FF, #FF00CC);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-back h3 {
+    margin: 15px;
+
+}
+
+.card-back p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.skills span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px currentColor;
+}
+
+/* Brand Colors */
+.social-links a:nth-child(1):hover {
+    color: #1da1f2;
+}
+
+/* Twitter */
+.social-links a:nth-child(2):hover {
+    color: #0077b5;
+}
+
+/* LinkedIn */
+.social-links a:nth-child(3):hover {
+    color: #f5f5f5;
+    background: #000;
+}
+
+/* GitHub */
+
+
+/* Moto Section */
+.moto {
+    background-color: #0d0d1a;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.moto::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(98, 0, 234, 0.3), transparent 70%);
+    animation: glow-move 8s infinite linear;
+}
+
+@keyframes glow-move {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.moto-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.moto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #bb86fc;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.6);
+}
+
+.moto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.moto .highlight {
+    color: #bb86fc;
+    font-weight: bold;
+}
+
+.moto .final-line {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(187, 134, 252, 0.8);
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: linear-gradient(45deg, #bb86fc, #7f39fb);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(127, 57, 251, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(127, 57, 251, 0.9);
+}
+
+/*---------------------------------------------------------------------------------------*/
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px #8000FF;
+}
+
+.site-footer {
+    position: relative;
+    background: url("./assets/Header Background.png") no-repeat center center/cover;
+    background-attachment: fixed;
+    /* stationary parallax background */
+    color: white;
+    text-align: center;
+    padding: 80px 20px 40px;
+    overflow: hidden;
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo {
+    border-radius: 20px;
+    width: 120px;
+    margin-bottom: 15px;
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.footer-title {
+
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #ffcc00;
+    /* accent */
+}
+
+.footer-tagline {
+
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.footer-socials a {
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 1.8rem;
+    color: #ffcc00;
+    transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+    transform: scale(1.2) rotate(5deg);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Generic hidden state */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease;
+}
+
+/* Visible state triggered by JS */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* If you want directional animations */
+.fade-left {
+    transform: translateX(-70px);
+}
+
+.fade-right {
+    transform: translateX(70px);
+}
+
+.fade-up {
+    transform: translateY(70px);
+}
+
+.fade-down {
+    transform: translateY(-70px);
+}
+
+.fade-left.visible,
+.fade-right.visible,
+.fade-up.visible,
+.fade-down.visible {
+    transform: translate(0);
+    opacity: 1;
+}
