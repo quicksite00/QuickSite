@@ -192,6 +192,7 @@ section:nth-child(even) {
 /* Team Section */
 .team {
     padding: 100px 10%;
+    padding-top: 20px;
     text-align: center;
     background: #0d0d1a;
 }
@@ -205,14 +206,14 @@ section:nth-child(even) {
 
 .section-subtitle {
     font-size: 1.4rem;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     opacity: 0.8;
 }
 
 .team-cards {
     display: flex;
     justify-content: center;
-    gap: 180px;
+    gap: 200px;
     flex-wrap: wrap;
     text-decoration: none;
 }
