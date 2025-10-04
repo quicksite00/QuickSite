@@ -45,7 +45,7 @@ header .overlay {
 
 /* Glowing title */
 header h1.glow {
-    font-size: 6rem;
+    font-size: 100px;
     text-transform: uppercase;
     color: #fff;
     text-shadow: 0 0 10px #FF00CC, 0 0 20px #8000FF;
@@ -212,10 +212,11 @@ section:nth-child(even) {
 
 .team-cards {
     display: flex;
-    justify-content: center;
-    gap: 200px;
-    flex-wrap: wrap;
-    text-decoration: none;
+        justify-content: center;
+        gap: 220px;
+        /* Reduced from 200px */
+        flex-wrap: wrap;
+        text-decoration: none;
 }
 
 .team-card {
@@ -445,6 +446,272 @@ section:nth-child(even) {
 
 /*---------------------------------------------------------------------------------------*/
 
+
+
+/* Process Section */
+.process {
+    padding: 100px 10%;
+    background: #1a1a2e;
+    position: relative;
+    overflow: hidden;
+}
+
+.process::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 70%, rgba(128, 0, 255, 0.1), transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255, 0, 204, 0.1), transparent 50%);
+    pointer-events: none;
+}
+
+.process-container {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+    align-items: flex-start;
+}
+
+.process-steps {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 15px;
+    border-left: 4px solid #8000FF;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(128, 0, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.process-step:hover::before {
+    left: 100%;
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(128, 0, 255, 0.2);
+    border-left-color: #FF00CC;
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8000FF;
+    min-width: 60px;
+    text-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.process-step:hover .step-number {
+    color: #FF00CC;
+    transform: scale(1.1);
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8000FF, #FF00CC);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover .step-icon {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 204, 0.6);
+}
+
+/* Process Visualization */
+.process-visual {
+    flex: 0 0 400px;
+    text-align: center;
+}
+
+.visual-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.visual-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.visual-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8000FF, #FF00CC);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(128, 0, 255, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.visual-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 204, 0.6);
+}
+
+.visual-arrow {
+    font-size: 1.5rem;
+    color: #8000FF;
+    animation: bounceHorizontal 2s infinite;
+}
+
+.visual-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #bb86fc;
+    text-transform: uppercase;
+}
+
+.visual-labels span {
+    flex: 1;
+    text-align: center;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(128, 0, 255, 0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(128, 0, 255, 0.5);
+    }
+}
+
+@keyframes bounceHorizontal {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .process-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .process-visual {
+        flex: none;
+        width: 100%;
+    }
+
+    .visual-container {
+        justify-content: space-between;
+    }
+
+    .visual-step {
+        flex-direction: column;
+    }
+
+    .visual-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .step-number {
+        min-width: auto;
+    }
+
+    .visual-container {
+        gap: 5px;
+    }
+
+    .visual-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .visual-arrow {
+        font-size: 1.2rem;
+    }
+
+    .visual-labels {
+        font-size: 0.7rem;
+    }
+}
+
+
+
+
+/*---------------------------------------------------------------------------------------*/
+
 /* Plans Section */
 .plans {
     padding: 100px 10%;
@@ -468,14 +735,16 @@ section:nth-child(even) {
 .plans-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
+    /* Reduced gap */
     margin-top: 60px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
 }
 
 .plan-card {
     position: relative;
-    width: 350px;
+    width: 3200px;
     background: #1a1a2e;
     border-radius: 15px;
     overflow: hidden;
@@ -657,18 +926,15 @@ section:nth-child(even) {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .plans-container {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
-
+    
     .plan-card {
-        width: 100%;
-        max-width: 350px;
+        width: 300px; /* Further reduce width for tablets */
     }
 }
-
 
 
 /* Contact Section */
