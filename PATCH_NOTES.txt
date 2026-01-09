@@ -1,0 +1,1 @@
+Updating team card styles: set display:flex on .team-card, perspective-origin, remove invalid object-view-box, make images circular, add box-sizing to .card-front/.card-back.

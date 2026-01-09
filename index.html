@@ -15,12 +15,34 @@
 
     <!-- Header -->
     <header>
+        <div class="animated-bg">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
         <div class="overlay"></div>
         <div class="header-content">
-            <h1 class="glow">QuickSite</h1>
-            <p class="tagline">One Page. Big Impact.</p>
-            <a href="#" id="catBtn" class="cta">Get Your Site Today</a>
-            <div class="scroll-down">▼</div>
+            <div class="animated-text-wrapper">
+                <h1 class="glow">QuickSite</h1>
+                <div class="underline-animation"></div>
+            </div>
+            <p class="tagline">One Page. <span class="highlight">Big Impact</span>.</p>
+            <div class="cta-container">
+                <a href="#" id="catBtn" class="cta">
+                    <span class="cta-text">Get Your Site Today</span>
+                    <div class="cta-bg"></div>
+                </a>
+            </div>
+            <div class="scroll-down">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <div class="float-box"></div>
+            <div class="float-circle"></div>
+            <div class="float-box"></div>
         </div>
     </header>
 
@@ -29,9 +51,10 @@
         <div class="intro-content">
             <div class="intro-text animate-on-scroll fade-up">
                 <h2 class="intro-title">Welcome to <span>QuickSite</span></h2>
+                <div class="title-line title-line--small"></div>
                 <p class="intro-tagline">We craft lightning-fast, one-page websites that help startups and small businesses
                     shine on the web.</p>
-                <p class="intro-detail">Whether you're just starting out or already growing on platforms like Instagram and Facebook, we give you a professional edge with sleek, responsive, and impactful sites. These webistes are hosted free of cost and they are live 24/7, keeping your online identity alive all the time!</p>
+                <p class="intro-detail">Whether you're just starting out or already growing on platforms like Instagram and Facebook, we give you a professional edge with sleek, responsive, and impactful sites. These websites are hosted free of cost and they are live 24/7, keeping your online identity alive all the time!</p>
                 <a href="#process" id="cta-intro" class="cta intro-cta animate-on-scroll fade-up">See What You Get</a>
             </div>
             <div class="intro-image animate-on-scroll fade-right">
@@ -44,6 +67,7 @@
     <!-- Team -->
     <section class="team">
         <h2 class="section-title">Meet the Team</h2>
+        <div class="title-line"></div>
         <p class="section-subtitle">Two friends, one mission: helping your business shine online.</p>
 
         <div class="team-cards">
@@ -132,11 +156,161 @@
         </div>
     </section>
 
+    <!-- Portfolio Showcase Section -->
+    <section class="portfolio-showcase" id="portfolio">
+        <div class="portfolio-content">
+            <h2 class="section-title animate-on-scroll">Our Success Stories</h2>
+            <div class="title-line"></div>
+            <p class="section-subtitle animate-on-scroll">Discover the stunning websites we've crafted for professionals and
+                businesses</p>
+    
+            <!-- Filter Tabs -->
+            <div class="filter-tabs animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="professional">Professional Portfolio</button>
+                <button class="filter-btn" data-filter="business">Business & Services</button>
+            </div>
+    
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Project 1: Shehryar Ali -->
+                <div class="portfolio-card" data-category="professional">
+                    <div class="card-image-wrapper">
+                        <img src="./assets/Shehryar Ali Portfolio.png"
+                            alt="Chartered Accountant Portfolio" class="card-image">
+                        <div class="card-category">Professional</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Shehryar Ali</h3>
+                        <p class="card-description">A sophisticated portfolio for a Chartered Accountant showcasing
+                            professional credentials, services, and expertise in financial consulting.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Responsive Design</span>
+                            <span class="feature-tag">Contact Form</span>
+                            <span class="feature-tag">Service Showcase</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://shehryar-ali-portfolio.netlify.app/" class="view-project-btn" target="_blank">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Premium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 2: Chand Marriage Hall -->
+                <div class="portfolio-card" data-category="business">
+                    <div class="card-image-wrapper">
+                        <img src="./assets/Chad Hall Web.png"
+                            alt="Marriage Hall Website" class="card-image">
+                        <div class="card-category">Business</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Chand Marriage Hall</h3>
+                        <p class="card-description">An elegant wedding venue website featuring gallery, booking system, and
+                            venue details for Phool Nagar's premier marriage hall.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Image Gallery</span>
+                            <span class="feature-tag">Booking Info</span>
+                            <span class="feature-tag">Location Map</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://chandmarriagehall.netlify.app/" class="view-project-btn" target="_blank">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Featured</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 3: Muhammad Usama Hassan Alvi -->
+                <div class="portfolio-card" data-category="professional">
+                    <div class="card-image-wrapper">
+                        <img src="./assets/Usama Hassan Alvi Portfolio.png"
+                            alt="Academic Portfolio" class="card-image">
+                        <div class="card-category">Professional</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Muhammad Usama Hassan Alvi</h3>
+                        <p class="card-description">A comprehensive academic portfolio for a Lecturer & Researcher
+                            highlighting publications, research areas, and teaching experience.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Research Portfolio</span>
+                            <span class="feature-tag">Publications</span>
+                            <span class="feature-tag">CV Download</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://usama-hassan-alvi-portfolio.netlify.app/" class="view-project-btn" target="_blank">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Academic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 4: The Cake Bar -->
+                <div class="portfolio-card" data-category="business">
+                    <div class="card-image-wrapper">
+                        <img src="./assets/Cake Bar Web.png"
+                            alt="Bakery Website" class="card-image">
+                        <div class="card-category">Business</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">The Cake Bar</h3>
+                        <p class="card-description">A delightful bakery website featuring handcrafted sweetness, menu
+                            showcase, and online ordering capabilities with stunning visuals.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Menu Display</span>
+                            <span class="feature-tag">Custom Animations</span>
+                            <span class="feature-tag">Social Integration</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://thecakebar01.netlify.app" class="view-project-btn" target="_blank">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Creative</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- CTA Section -->
+            <div class="portfolio-cta animate-on-scroll">
+                <div class="portfolio-cta-content">
+                    <h3>Ready to Join Our Success Stories?</h3>
+                    <p>Let's create something amazing together. Your stunning website is just one click away!</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- How We Work Section -->
     <section class="process" id="process">
         <div class="process-content">
             <h2 class="section-title">How We Work</h2>
+            <div class="title-line"></div>
             <p class="section-subtitle">A seamless journey from idea to live website in simple steps</p>
     
             <div class="process-container">
@@ -278,6 +452,7 @@
     <section class="plans" id="plans">
         <div class="plans-content">
             <h2 class="section-title">Choose Your Plan</h2>
+            <div class="title-line"></div>
             <p class="section-subtitle">Select the perfect website package for your needs</p>
     
             <div class="plans-container">
@@ -311,7 +486,7 @@
                     <div class="plan-header">
                         <h3>Standard Portfolio</h3>
                         <div class="price">$10</div>
-                        <p class="plan-description">Perfect for businesses who need attractive, interractive and appealing online presence
+                        <p class="plan-description">Perfect for businesses who need attractive, interactive and appealing online presence
                         </p>
                     </div>
                     <div class="plan-features">
@@ -322,13 +497,13 @@
                             <li><i class="fas fa-check-circle"></i> Advanced effects (Scrolling etc)</li>
                             <li><i class="fas fa-check-circle"></i> Illustrations/graphics</li>
                             <li><i class="fas fa-check-circle"></i> Advance Contact Options</li>
-                            <li><i class="fas fa-check-circle"></i> Yearly/Monthy Maintenance</li>
+                            <li><i class="fas fa-check-circle"></i> Yearly/Monthly Maintenance</li>
                         </ul>
                     </div>
                     <div class="plan-footer">
                         <a href="#contact" class="cta-btn plan-btn">Select Standard</a>
                     </div>
-                    <div class="plan-badge">Most Relaible</div>
+                    <div class="plan-badge">Most Reliable</div>
                 </div>
 
                 <!-- Premium Plan -->
@@ -346,7 +521,7 @@
                             <li><i class="fas fa-check-circle"></i> Profile based Features</li>
                             <li><i class="fas fa-check-circle"></i> Custom Illustrations/Graphics</li>
                             <li><i class="fas fa-check-circle"></i> Custom Options/Integration</li>
-                            <li><i class="fas fa-check-circle"></i> Monthy/Weekly Maintenance</li>
+                            <li><i class="fas fa-check-circle"></i> Monthly/Weekly Maintenance</li>
                         </ul>
                     </div>
                     <div class="plan-footer">
@@ -366,6 +541,7 @@
     <section class="contact" id="contact">
         <div class="contact-content">
             <h2 class="section-title">Get In Touch</h2>
+            <div class="title-line"></div>
             <p class="section-subtitle">Ready to elevate your online presence? Let's create something amazing together!</p>
     
             <div class="contact-container">
@@ -394,8 +570,8 @@
                             <i class="fa-solid fa-hand-holding-dollar"></i>
                         </div>
                         <div class="info-text">
-                            <h4>One Time Payement</h4>
-                            <p>We dont trap you in mothly subscriptions, Pay once enjoy forever</p>
+                            <h4>One Time Payment</h4>
+                            <p>We don't trap you in monthly subscriptions — pay once, enjoy forever.</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -454,24 +630,45 @@
 
 
   <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
+    <footer class="site-footer">        
+        <div class="animated-bg footer-bg">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
+        <div class="footer-overlay"></div>        <div class="footer-content">
             <img src="./assets/QuickSite Logo.png" alt="Logo" class="footer-logo" />
 
             <h2 class="footer-title">Let’s Build Something Great</h2>
             <p class="footer-tagline">Logic-Based Solutions | Step-in • Make-day • Live!</p>
 
             <div class="footer-socials">
-                <a href="https://github.com/quicksite00" target="_blank" class="fa fa-github"></a>
-                <a href="https://www.linkedin.com/company/quick-site-r/" target="_blank" class="fa fa-linkedin"></a>
-                <a href="https://quick-site-00.vercel.app/" target="_blank" class="fa fa-globe"></a>
-                <a href="https://www.instagram.com/quick.site00/" target="_blank" class="fa fa-instagram"></a>
-                <a href="mailto:quicksite00@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                <a href="https://github.com/quicksite00" target="_blank" class="social-link fa fa-github" title="GitHub">
+                    <span class="social-tooltip">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/company/quick-site-r/" target="_blank" class="social-link fa fa-linkedin" title="LinkedIn">
+                    <span class="social-tooltip">LinkedIn</span>
+                </a>
+                <a href="https://quick-site-00.vercel.app/" target="_blank" class="social-link fa fa-globe" title="Website">
+                    <span class="social-tooltip">Website</span>
+                </a>
+                <a href="https://www.instagram.com/quick.site00/" target="_blank" class="social-link fa fa-instagram" title="Instagram">
+                    <span class="social-tooltip">Instagram</span>
+                </a>
+                <a href="mailto:quicksite00@gmail.com" target="_blank" class="social-link fa fa-envelope" title="Email">
+                    <span class="social-tooltip">Email</span>
+                </a>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2020 QuickSite | All Rights Reserved</p>
+        </div>
+        
+        <div class="floating-elements footer-floats">
+            <div class="float-box"></div>
+            <div class="float-circle"></div>
+            <div class="float-box"></div>
         </div>
     </footer>
 
@@ -482,10 +679,7 @@
 
 
 <!-- Paste to GitHub:
-git pull origin master
-
-
 git add .
 git commit -m "Adding a Google Search Console to the site!"
 git push origin master
- -->
+-->
