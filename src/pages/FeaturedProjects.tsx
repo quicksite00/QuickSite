@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Suspense, useCallback } from 'react'
+import { useState, useEffect, useRef, useMemo, Suspense, useCallback } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import gsap from 'gsap'
 import * as THREE from 'three'
@@ -27,7 +27,7 @@ function ParticleField() {
   const count = 400
 
   // Pre-populate positions so particles have positions from the start
-  const positions = useRef(() => {
+  const positions = useMemo(() => {
     const pos = new Float32Array(count * 3)
     for (let i = 0; i < count; i++) {
       pos[i * 3] = (Math.random() - 0.5) * 30
@@ -35,7 +35,7 @@ function ParticleField() {
       pos[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5
     }
     return pos
-  })()
+  }, [])
 
   useFrame((state) => {
     if (!pointsRef.current) return
@@ -48,9 +48,7 @@ function ParticleField() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={count}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
