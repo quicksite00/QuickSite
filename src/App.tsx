@@ -1,13 +1,10 @@
 import { useEffect } from 'react'
-import Header from './components/Header'
-import Intro from './components/Intro'
-import Team from './components/Team'
-import Moto from './components/Moto'
-import PortfolioShowcase from './components/PortfolioShowcase'
-import Process from './components/Process'
-import Plans from './components/Plans'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import TeamPage from './pages/TeamPage'
+import PortfolioPage from './pages/PortfolioPage'
+import PlansPage from './pages/PlansPage'
+import FeaturedProjects from './pages/FeaturedProjects'
 
 function App() {
   useEffect(() => {
@@ -25,34 +22,6 @@ function App() {
     })
 
     return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const xPos = (e.clientX / window.innerWidth) - 0.5
-      const yPos = (e.clientY / window.innerHeight) - 0.5
-      const headerContent = document.querySelector('.header-content') as HTMLElement
-      if (headerContent) {
-        headerContent.style.transform = `perspective(800px) rotateX(${yPos * 8}deg) rotateY(${xPos * 8}deg) translateZ(50px)`
-      }
-      const blobs = document.querySelectorAll('.gradient-blob') as NodeListOf<HTMLElement>
-      blobs.forEach((blob, index) => {
-        const offset = (index + 1) * 50
-        blob.style.transform = `translate(${xPos * offset}px, ${yPos * offset}px)`
-      })
-    }
-
-    document.addEventListener('mousemove', handleMouseMove)
-    document.addEventListener('mouseleave', () => {
-      const headerContent = document.querySelector('.header-content') as HTMLElement
-      if (headerContent) {
-        headerContent.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)'
-      }
-    })
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove)
-    }
   }, [])
 
   useEffect(() => {
@@ -105,17 +74,13 @@ function App() {
   }, [])
 
   return (
-    <>
-      <Header />
-      <Intro />
-      <Team />
-      <Moto />
-      <PortfolioShowcase />
-      <Process />
-      <Plans />
-      <Contact />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/team" element={<TeamPage />} />
+      <Route path="/portfolio" element={<PortfolioPage />} />
+      <Route path="/plans" element={<PlansPage />} />
+      <Route path="/featured" element={<FeaturedProjects />} />
+    </Routes>
   )
 }
 

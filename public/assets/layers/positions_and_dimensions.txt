@@ -1,0 +1,12 @@
+Frame size: 1920 x 1080
+
+Layer: layer1.png     x: 0    y: 0    w: 1920 h: 1080   (z: 1, back)
+Layer: layer2.png     x: 0    y: 0    w: 1920  h: 1080   (z: 2, mid)
+Layer: layer3.png     x: 0    y: 50   w: 1920  h: 1080   (z: 3, front)
+Layer: obj1.png       x: 1640 y: 59  w: 240    h: 240    (z: 4)
+Layer: obj2.png       x: 1449 y: 290   w: 385    h: 385    (z: 4)
+Layer: obj3.png       x: 0      y: 89     w: 345    h: 345    (z: 4)#
+Text:   heading1	  x 400    y: 345   w: 1150   h: 200   fontsize: 150
+Text:   heading2	  x 50     y: 820   w: 350   h: 285   fontsize: 100
+Text:   heading3	  x 1480  y: 820   w: 415   h: 285   fontsize: 100 
+Layer: icon-float.png     x: 790  y: -55   w: 355   h: 355   (z: 10, animated)
